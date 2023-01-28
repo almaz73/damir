@@ -7,7 +7,7 @@ import path from 'path'
 export default defineConfig({
     plugins: [vue()],
     server: {
-        port: 58081,
+        port: 7080,
         proxy: {
             '/ambulance/':  {
                 // target: 'http://localhost:58080',
