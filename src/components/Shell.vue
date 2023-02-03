@@ -34,7 +34,7 @@ header {
 }
 
 .header-height {
-  height: 27px;
+  height: 33px;
 }
 
 
@@ -44,6 +44,7 @@ main {
 
 nav {
   min-width: 150px;
+  background: #EFEFEF;
 }
 
 article {
