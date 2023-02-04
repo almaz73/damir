@@ -1,22 +1,23 @@
 <template>
   <Shell>
     <article>
-      <div>
-        <h1>Редактирование для НП (№14905 от 31.03.2021)</h1>
-        <el-button>Изменить признак вызова</el-button>
-        <el-select v-model="value" class="m-2" placeholder="Select">
+      <div class="header">
+          <h1>Редактирование для НП (№14905 от 31.03.2021)</h1>
+          <el-button class="custom-style" round >Изменить признак вызова</el-button>
+          <el-select v-model="value" class="m-2 custom-style" placeholder="Действия" round>
           <el-option
+              
               v-for="item in options"
               :key="item.value"
               :label="item.label"
               :value="item.value"
           />
-        </el-select>
+          </el-select>       
       </div>
 
       <ReasonButtons/>
 
-      <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
+      <el-tabs type="border-card" v-model="activeName" class="demo-tabs" @tab-click="handleClick">
         <el-tab-pane label="Инфо" name="info">
           <InfoPanel/>
         </el-tab-pane>
@@ -75,3 +76,28 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+.custom-style{
+  --el-font-size-base: 19px;
+  margin:0px 5px;
+}
+
+h1{
+  font-size: 30px;
+  margin:0px 5px 0px  0px;
+  
+}
+article{
+  width: 100%;
+}
+
+.header{
+  display: flex;
+  padding:15px;
+  background: #EFEFEF;
+  width: 100%;
+}
+
+</style>
