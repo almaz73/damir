@@ -5,7 +5,7 @@
  <!-- <TransparentTemplate src="menu.gif" top="0" left="0" use="1" :toolLeft="150"/> -->
 
   <!--  Для стилизации КТ -->
-  <TransparentTemplate src="kt.png" top="0" left="0" toolLeft="130" use="1" />
+  <!-- <TransparentTemplate src="kt.png" top="0" left="0" toolLeft="130" use="1" /> -->
 
   <!--  Для стилизации КТ -->
  <!-- <TransparentTemplate src="head.gif" top="0" left="0" use="1"/> -->

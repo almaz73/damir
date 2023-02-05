@@ -1,42 +1,44 @@
 <template>
-  <div class="col">
-    <button class="button">
-      <img src="../assets/img/icons/ambulancemonitor.png"><br>
-      <router-link class="button__text" to="/help">Help</router-link>
-    </button>
-    <button class="button button--active">
-      <img src="../assets/img/icons/ambulancemonitor.png"><br>
-      <router-link class="button__text " to="/callcard">Мониторинг</router-link>
-    </button>
-    <button class="button">
-      <img src="../assets/img/icons/newKT.png"><br>
-      <router-link class="button__text" to="/#">Новый КТ</router-link>
-    </button>
-    <button class="button">
-      <img src="../assets/img/icons/oo.png"><br>
-      <router-link class="button__text" to="/#">Опер. обст</router-link>
-    </button>
-    <button class="button">
-      <img src="../assets/img/icons/hospital.png"><br>
-      <router-link class="button__text" to="/#">Госпитализация</router-link>
-    </button>
-    <button class="button">
-      <img src="../assets/img/icons/naryad.png"><br>
-      <router-link class="button__text" to="/#">Поликлиника</router-link>
-    </button>
-    <button class="button">
-      <img src="../assets/img/icons/naryad.png"><br>
-      <router-link class="button__text" to="/#">Журнал</router-link>
-    </button>
-  </div>
-  <div class="little-menu" v-if="triggerMenu.show">
+  <nav class="nav nav-mobile" :class="{ 'nav-mobile--active': this.triggerMenu.show }">
+    <div class="col ">
+      <button class="button">
+        <img src="../assets/img/icons/ambulancemonitor.png"><br>
+        <router-link class="button__text" to="/help">Help</router-link>
+      </button>
+      <button class="button button--active">
+        <img src="../assets/img/icons/ambulancemonitor.png"><br>
+        <router-link class="button__text " to="/callcard">Мониторинг</router-link>
+      </button>
+      <button class="button">
+        <img src="../assets/img/icons/newKT.png"><br>
+        <router-link class="button__text" to="/#">Новый КТ</router-link>
+      </button>
+      <button class="button">
+        <img src="../assets/img/icons/oo.png"><br>
+        <router-link class="button__text" to="/#">Опер. обст</router-link>
+      </button>
+      <button class="button">
+        <img src="../assets/img/icons/hospital.png"><br>
+        <router-link class="button__text" to="/#">Госпитализация</router-link>
+      </button>
+      <button class="button">
+        <img src="../assets/img/icons/naryad.png"><br>
+        <router-link class="button__text" to="/#">Поликлиника</router-link>
+      </button>
+      <button class="button">
+        <img src="../assets/img/icons/naryad.png"><br>
+        <router-link class="button__text" to="/#">Журнал</router-link>
+      </button>
+    </div>
+  </nav>
+  <!-- <div class="little-menu" v-if="triggerMenu.show">
     ...9999999999999999
 
-  </div>
+  </div> -->
 
 </template>
 <script>
-import {useTriggerMenu} from "@/callcard/store/triggerMenu";
+import { useTriggerMenu } from "@/callcard/store/triggerMenu";
 
 export default {
   name: 'LeftMenu',
@@ -52,6 +54,7 @@ export default {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
+  transition: .3s;
 }
 
 .button {
@@ -85,5 +88,25 @@ export default {
   position: absolute;
   top: 30px
 }
+
+@media screen and (max-width: 900px) {
+
+
+  .nav-mobile {
+    position: fixed;
+    z-index: 10;
+    height: 100%;
+    left: -200px;
+    transition: .4s;
+  }
+
+  .nav-mobile--active {
+    left: 0px;
+  }
+  .button__text{
+    display: none;
+  }
+}
+
 
 </style>

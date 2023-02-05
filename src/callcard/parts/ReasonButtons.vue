@@ -23,7 +23,6 @@ export default {
   display: flex;
   padding: 0px 15px 15px 7px;
   background: #EFEFEF;
-  width: 100%;
   flex-wrap: wrap;
 }
 

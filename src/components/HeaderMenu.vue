@@ -1,11 +1,15 @@
 <template>
   <div class="headermenu">
     <div class="left">
-      <img src="src/assets/img/icons/swg/sandwich.svg" @click="triggerMenu()">
+      <div class="button-sandwich view-mobile" :class="{ 'button-sandwich--active': this.activeButton }"
+        @click="triggerMenu">
+        <div class="button-sandwich__in"></div>
+      </div>
+      <!-- <img src="src/assets/img/icons/svg/sandwich.svg"> -->
       <span class="server-time">12:52</span>
       <span class="text text-version">Версия 1.42.0 от 24 января 2023 17:33</span>
       <button class="wide">112</button>
-      <button class="wide">Оповещения <span class="wide__num">36</span></button>
+      <button class="wide"><span class="no-wrap">Оповещения <span class="wide__num">36</span></span> </button>
       <button class="wide">Подписать</button>
       <button class="wide">⚠</button>
       <button class="wide">⏰</button>
@@ -14,7 +18,7 @@
     </div>
     <div class="right">
       <div class="right__info">
-        <span>⚠</span>
+        <span class="text">⚠</span>
         <span class="text text--danger"> Тестовый сервер</span>
         <span class="text">
           Чувашия системня
@@ -31,24 +35,31 @@
       </div>
 
 
-      <el-button @click="exit()">Выход</el-button>
+      <el-button class="mobile-none"  @click="exit()">Выход</el-button>
+      <img class="mobile-exit" src="src/assets/img/icons/svg/exit.svg" @click="exit()"  alt="Выход">
     </div>
   </div>
 </template>
 <script>
 import axios from "axios";
-import {useTriggerMenu} from "../callcard/store/triggerMenu";
+import { useTriggerMenu } from "../callcard/store/triggerMenu";
 
 export default {
   name: 'HeaderMenu',
+  data() {
+    return {
+      activeButton: false,
+    }
+  },
   methods: {
     triggerMenu() {
       useTriggerMenu().show = !useTriggerMenu().show
+      this.activeButton = useTriggerMenu().show
     },
     exit() {
       console.log('выход',);
       axios.post('/ambulance/logout').then(resp => {
-        this.$router.push({path: '/login'});
+        this.$router.push({ path: '/login' });
       })
     },
   },
@@ -59,6 +70,7 @@ export default {
   display: flex;
   background: #EFEFEF;
   height: 33px;
+  padding: 0px 5px;
 }
 
 .headermenu .left {
@@ -99,8 +111,10 @@ button {
   color: #646262;
   margin: 0px 1px;
   font-size: 18px;
-  min-width: 35px;
+  min-width: 30px;
   height: 100%;
+  padding: 0px 5px;
+
 }
 
 .wide__num {
@@ -111,19 +125,7 @@ button {
   padding: 2px 6px;
 }
 
-@media (max-device-width: 900px) {
-  .wide {
-    display: none;
-  }
 
-  .headermenu .left {
-    width: auto;
-  }
-
-  .headermenu .right {
-    width: auto;
-  }
-}
 
 .server-time {
   display: inline-flex;
@@ -142,4 +144,97 @@ button {
   width: 100%;
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
+.view-mobile {
+  display: none;
+}
+
+.button-sandwich {
+  position: relative;
+  width: 66px;
+  height: 100%;
+  background: #EFEFEF;
+  cursor: pointer;
+  perspective: 1000px;
+  transition: .4s;
+  z-index: 5;
+}
+
+.button-sandwich__in,
+.button-sandwich__in::before,
+.button-sandwich__in::after {
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background: #7F9DC6;
+  left: calc(50% - 9px);
+  top: calc(50% - 1px);
+  z-index: 1;
+}
+
+.button-sandwich__in::before,
+.button-sandwich__in::after {
+  content: "";
+  transition: .5s;
+}
+
+.button-sandwich__in::before {
+  transform: translateY(-5px);
+}
+
+.button-sandwich__in::after {
+  transform: translateY(5px);
+}
+
+.button-sandwich--active .button-sandwich__in {
+  height: 0px;
+}
+
+.button-sandwich--active .button-sandwich__in::before {
+  transform: rotate(45deg);
+}
+
+.button-sandwich--active .button-sandwich__in::after {
+  transform: rotate(-45deg);
+}
+
+.mobile-exit{
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+
+  
+  .headermenu .left {
+    width: auto;
+    padding-left: 0px;
+  }
+
+  .headermenu .right {
+    width: auto;
+  }
+  .text,
+  .server-time,
+  .wide {
+    display: none;
+  }
+
+  .view-mobile {
+    display: block;
+  }
+
+  .headermenu {
+    justify-content: space-between;
+  }
+  .mobile-none{
+    display: none;
+  }
+  .mobile-exit{
+    display: block;
+    padding-right: 20px;
+  }
+}
 </style>

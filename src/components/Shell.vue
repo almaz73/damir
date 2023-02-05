@@ -1,13 +1,11 @@
 <template>
   <header>
-    <HeaderMenu/>
+    <HeaderMenu />
   </header>
   <div class="header-height"></div>
   <main>
-    <nav>
-      <LeftMenu/>
-    </nav>
-    <slot/>
+    <LeftMenu />
+    <slot />
   </main>
 </template>
 <script>
@@ -20,15 +18,15 @@ export default {
    * а посередени в слоте будет отображать страницу'
    */
   name: 'Shell',
-  components: {LeftMenu, HeaderMenu}
+  components: { LeftMenu, HeaderMenu },
 }
 </script>
 <style scoped>
-
 header {
   position: fixed;
   width: 100%;
-  background: #e9e6f3;;
+  background: #e9e6f3;
+  ;
   box-shadow: 0 0 5px black;
   height: 27px;
 }
@@ -42,7 +40,7 @@ main {
   display: flex;
 }
 
-nav {
+.nav {
   min-width: 150px;
   background: #EFEFEF;
 }
@@ -64,4 +62,6 @@ article {
     flex: 1 1 auto;
   }
 }
+
+
 </style>

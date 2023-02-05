@@ -98,7 +98,16 @@ article {
   display: flex;
   padding: 13px;
   background: #EFEFEF;
-  width: 100%;
+  flex-wrap: wrap;
 }
+.header h1{
+  padding-bottom: 10px;
+}
+@media screen and (max-width: 900px) {
+  .custom-style{
+    margin: 5px auto;
+  }
+}
+
 
 </style>
