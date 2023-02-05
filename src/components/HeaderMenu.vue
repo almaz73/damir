@@ -1,6 +1,7 @@
 <template>
   <div class="headermenu">
     <div class="left">
+      <img src="src/assets/img/icons/swg/sandwich.svg">
       <span class="server-time">12:52</span>
       <span class="text text-version">Версия 1.42.0 от 24 января 2023 17:33</span>
       <button class="wide">112</button>
