@@ -1,7 +1,7 @@
 <template>
   <div class="headermenu">
     <div class="left">
-      <img src="src/assets/img/icons/swg/sandwich.svg">
+      <img src="src/assets/img/icons/swg/sandwich.svg" @click="triggerMenu()">
       <span class="server-time">12:52</span>
       <span class="text text-version">Версия 1.42.0 от 24 января 2023 17:33</span>
       <button class="wide">112</button>
@@ -37,13 +37,18 @@
 </template>
 <script>
 import axios from "axios";
+import {useTriggerMenu} from "../callcard/store/triggerMenu";
+
 export default {
   name: 'HeaderMenu',
   methods: {
+    triggerMenu() {
+      useTriggerMenu().show = !useTriggerMenu().show
+    },
     exit() {
       console.log('выход',);
       axios.post('/ambulance/logout').then(resp => {
-        this.$router.push({ path: '/login' });
+        this.$router.push({path: '/login'});
       })
     },
   },
@@ -73,10 +78,12 @@ export default {
 .text {
   font-size: 18px;
 }
-.text--danger{
+
+.text--danger {
   color: #D8332E;
   font-weight: bold;
 }
+
 .text-version {
   margin: 0px 5px 0px 15px;
 }
@@ -108,10 +115,12 @@ button {
   .wide {
     display: none;
   }
-  .headermenu .left{
+
+  .headermenu .left {
     width: auto;
   }
-  .headermenu .right{
+
+  .headermenu .right {
     width: auto;
   }
 }
@@ -126,7 +135,8 @@ button {
   font-size: 35px;
   line-height: 0.9;
 }
-.right__info{
+
+.right__info {
   display: flex;
   justify-content: space-around;
   width: 100%;

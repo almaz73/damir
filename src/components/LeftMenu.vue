@@ -29,18 +29,29 @@
       <router-link class="button__text" to="/#">Журнал</router-link>
     </button>
   </div>
+  <div class="little-menu" v-if="triggerMenu.show">
+    ...9999999999999999
+
+  </div>
 
 </template>
 <script>
+import {useTriggerMenu} from "@/callcard/store/triggerMenu";
+
 export default {
-  name: 'LeftMenu'
+  name: 'LeftMenu',
+  data() {
+    return {
+      triggerMenu: useTriggerMenu()
+    }
+  }
 }
 </script>
 <style scoped>
 .col {
   display: flex;
   flex-direction: column;
-  padding-left:20px;
+  padding-left: 20px;
 }
 
 .button {
@@ -52,19 +63,27 @@ export default {
   background: #F5F5F5;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  transition:background .3s;
+  transition: background .3s;
   cursor: pointer;
 }
-.button:hover{
+
+.button:hover {
   background: #fff;
 }
+
 .button__text {
   color: black;
   text-decoration: none;
   font-size: 16px;
 }
-.button--active{
+
+.button--active {
   background: #fff;
+}
+
+.little-menu {
+  position: absolute;
+  top: 30px
 }
 
 </style>
