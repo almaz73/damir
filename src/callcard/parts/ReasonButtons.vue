@@ -21,7 +21,7 @@ export default {
 <style scoped>
 .buttons {
   display: flex;
-  padding: 0px 15px 15px 7px;
+  padding: 0px 100px 17px 7px;
   background: #EFEFEF;
   flex-wrap: wrap;
 }
@@ -30,7 +30,10 @@ export default {
   box-shadow: none;
   --el-font-size-base: 14px;
   --el-border-radius-base: 6px;
-  margin:0px 0px 8px 8px;
+  margin: 0px 0px 8px 8px;
+  padding:0px 15px;
+  height: 30px;
+
 }
 
 .grey {
@@ -53,5 +56,11 @@ export default {
 
 .green-light {
   background: #B3D7AF;
+}
+
+@media screen and (max-width: 900px) {
+  .buttons {
+    padding: 0px 15px 15px 7px;
+  }
 }
 </style>

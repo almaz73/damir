@@ -5,7 +5,6 @@
         @click="triggerMenu">
         <div class="button-sandwich__in"></div>
       </div>
-      <!-- <img src="src/assets/img/icons/svg/sandwich.svg"> -->
       <span class="server-time">12:52</span>
       <span class="text text-version">Версия 1.42.0 от 24 января 2023 17:33</span>
       <button class="wide">112</button>
@@ -18,25 +17,27 @@
     </div>
     <div class="right">
       <div class="right__info">
-        <span class="text">⚠</span>
-        <span class="text text--danger"> Тестовый сервер</span>
-        <span class="text">
+        <div class="text">⚠</div>
+        <div class="text text--danger"> Тестовый сервер</div>
+        <div class="text">
           Чувашия системня
-        </span>
-        <span class="text">
+        </div>
+        <div class="text">
           Полный доступ
-        </span>
-        <span class="text text--danger">
+        </div>
+        <div class="text text--danger">
           Режим ЧС
-        </span>
-        <span class="text">
+        </div>
+        <div class="text">
           adminSMP
-        </span>
+        </div>
       </div>
 
 
-      <el-button class="mobile-none"  @click="exit()">Выход</el-button>
-      <img class="mobile-exit" src="src/assets/img/icons/svg/exit.svg" @click="exit()"  alt="Выход">
+      <!-- <el-button class="mobile-none"  @click="exit()">Выход</el-button> -->
+      <el-button @click="exit()" :type="plain" text class="exit"><img src="src/assets/img/icons/svg/exit.svg"
+          alt="Выход"><span class="exit-text">Выход</span> </el-button>
+      <!-- <img class="mobile-exit" src="src/assets/img/icons/svg/exit.svg" @click="exit()"  alt="Выход"> -->
     </div>
   </div>
 </template>
@@ -89,6 +90,9 @@ export default {
 
 .text {
   font-size: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .text--danger {
@@ -101,7 +105,7 @@ export default {
 }
 
 button {
-  height: 23px
+  height: 100%;
 }
 
 .wide {
@@ -201,13 +205,22 @@ button {
   transform: rotate(-45deg);
 }
 
-.mobile-exit{
+.exit {
+  color: #7180A3;
+  font-size: 19px;
+}
+
+.exit img {
+  margin-right: 5px;
+}
+
+.mobile-exit {
   display: none;
 }
 
 @media screen and (max-width: 900px) {
 
-  
+
   .headermenu .left {
     width: auto;
     padding-left: 0px;
@@ -216,6 +229,7 @@ button {
   .headermenu .right {
     width: auto;
   }
+
   .text,
   .server-time,
   .wide {
@@ -229,12 +243,16 @@ button {
   .headermenu {
     justify-content: space-between;
   }
-  .mobile-none{
+
+  .exit img {
+    margin-right: 0px;
+  }
+
+  .exit .exit-text {
     display: none;
   }
-  .mobile-exit{
-    display: block;
-    padding-right: 20px;
+  .exit{
+    height: 100%;
   }
 }
 </style>

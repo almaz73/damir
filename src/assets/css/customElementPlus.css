@@ -21,7 +21,14 @@
     background: #F6F6F6;
     box-shadow: 0 0 0 1px #c0c4cc;
 }
-
+.el-button.is-text{
+    background:transparent;
+    box-shadow: none;
+}
+.el-button.is-text:not(.is-disabled):focus, .el-button.is-text:not(.is-disabled):hover {
+    box-shadow:none;
+    background-color: transparent;
+}
 .el-input__wrapper {
     border: none;
     background: #F6F6F6;
