@@ -74,10 +74,15 @@
     padding-left: 15px;
 }
 
+.el-tabs--border-card>.el-tabs__content {
+    padding: 0px;
+}
+
 
 @media screen and (max-width: 900px) {
     .el-button{
         white-space:normal;
     }
 }
+ 
 

@@ -31,10 +31,6 @@
       </button>
     </div>
   </nav>
-  <!-- <div class="little-menu" v-if="triggerMenu.show">
-    ...9999999999999999
-
-  </div> -->
 
 </template>
 <script>
