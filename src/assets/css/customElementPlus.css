@@ -59,6 +59,21 @@
     box-shadow: 0 0 0 1px #c0c4cc;
 }
 
+
+.round-select .el-input {
+    --el-input-placeholder-color: black;
+}
+
+.el-select .el-input .el-select__caret.el-icon svg{
+    display: none;
+}
+.el-select .el-input .el-select__caret.el-icon::after {
+    content: ''; 
+    position: absolute; /* Абсолютное позиционирование */
+    left: 0px; bottom: -10px; /* Положение треугольника */
+    border: 6px solid transparent; /* Прозрачные границы */
+    border-top: 6px solid black; /* Добавляем треугольник */
+   }
 /* TABS */
 
 .el-tabs--border-card{
