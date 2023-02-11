@@ -1,21 +1,62 @@
 <template>
   <div class="buttons">
-    <el-button class="grey">КВ заполнена</el-button>
-    <el-button class="grey">КВ не проверена</el-button>
-    <el-button class="green-bold">Идентифицирован</el-button>
-    <el-button class="red">Принят из Служба 112 № [ноя25_оказание_532] (принят (112))</el-button>
-    <el-button class="red">Передан в Полиция (02)</el-button>
-    <el-button class="yellow">Связан с №424 (ЗАДВ)</el-button>
-    <el-button class="green-light">ЕДДС (Новокузнецкий ГО ЕДДС)</el-button>
-    <el-button class="red">Передан в Полиция (02)</el-button>
-    <el-button class="yellow">Связан с №424 (ЗАДВ)</el-button>
-    <el-button class="green-light">ЕДДС (Новокузнецкий ГО ЕДДС)</el-button>
+    <el-button v-for="button in buttons" :class="[button.color]" >{{ button.text }}</el-button>
   </div>
 
 </template>
 <script>
+
 export default {
-  name: 'ReasonButtons'
+  name: 'ReasonButtons',
+  data(){
+    return {
+      buttons:[
+        {
+          text:'КВ заполнена',
+          color:'grey',
+        },
+        {
+          text:'КВ не проверена',
+          color:'grey',
+        },
+        {
+          text:'Идентифицирован',
+          color:'green-bold',
+        },
+        {
+          text:'Принят из Служба 112 № [ноя25_оказание_532] (принят (112))',
+          color:'red',
+        },
+        {
+          text:'Передан в Полиция (02)',
+          color:'red',
+        },
+        {
+          text:'Связан с №424 (ЗАДВ)',
+          color:'yellow',
+        },
+        {
+          text:'ЕДДС (Новокузнецкий ГО ЕДДС)',
+          color:'green-light',
+        },
+        {
+          text:'Передан в Полиция (02)',
+          color:'red',
+        },
+        {
+          text:'Связан с №424 (ЗАДВ)',
+          color:'yellow',
+        },
+        {
+          text:'ЕДДС (Новокузнецкий ГО ЕДДС)',
+          color:'green-light',
+        },
+
+
+
+      ]
+    }
+  }
 }
 </script>
 <style scoped>
