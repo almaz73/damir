@@ -11,3 +11,9 @@ body {
     background: #e9e6f3;
     font-size: 1em;
 }
+
+.row {
+    display: flex;
+    align-items: center;
+    margin: 9px 0;
+}

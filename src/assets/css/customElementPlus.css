@@ -11,6 +11,7 @@
     --el-button-hover-text-color: black;
     --el-button-hover-bg-color: white;
     --el-button-text-color: black;
+    --el-font-size-base: 19px;
 }
 
 .el-button:hover {
@@ -38,8 +39,21 @@
     --el-input-focus-border-color: #999;
     --el-select-input-focus-border-color: #999;
     --el-input-text-color: black;
-    --el-input-border-radius: 20px;
 }
+
+/* types of select */
+.round-select {
+    margin: 0px 15px;
+}
+
+.round-select .el-input__wrapper {
+    border-radius: 20px;
+}
+
+.round-select .el-input {
+    --el-font-size-base: 19px;
+}
+
 
 .el-input__wrapper:hover {
     box-shadow: 0 0 0 1px #c0c4cc;
@@ -48,14 +62,14 @@
 /* TABS */
 
 .el-tabs--border-card{
-    border:none;  
+    border:none;
 }
 .el-tabs--border-card>.el-tabs__header{
     padding: 0 0  0px 15px;
     background: #EFEFEF;
     --el-fill-color-light:#EFEFEF;
     --el-border-color-light:#EFEFEF;
-    
+
 }
 
 .el-tabs__item{
@@ -84,5 +98,5 @@
         white-space:normal;
     }
 }
- 
+
 
