@@ -3,7 +3,7 @@
     <article>
       <div class="header">
         <h1>Редактирование для НП (№14905 от 31.03.2021)</h1>
-        <el-button class="custom-style" round>Изменить признак вызова</el-button>
+        <el-button  round>Изменить признак вызова</el-button>
         <el-select v-model="value" class="round-select" placeholder="Действия">
           <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
         </el-select>

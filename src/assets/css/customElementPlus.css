@@ -1,4 +1,3 @@
-
 /* BUTTONS & SELECT */
 .el-button {
     border: none;
@@ -22,15 +21,19 @@
     background: #F6F6F6;
     box-shadow: 0 0 0 1px #c0c4cc;
 }
-.el-button.is-text{
-    background:transparent;
+
+.el-button.is-text {
+    background: transparent;
     box-shadow: none;
 }
-.el-button.is-text:not(.is-disabled):focus, .el-button.is-text:not(.is-disabled):hover {
-    box-shadow:none;
+
+.el-button.is-text:not(.is-disabled):focus,
+.el-button.is-text:not(.is-disabled):hover {
+    box-shadow: none;
     background-color: transparent;
 }
-.el-input__wrapper {
+
+.round-select .el-input__wrapper {
     border: none;
     background: #F6F6F6;
     box-shadow: 0.5px 0.5px 2px #999;
@@ -59,47 +62,83 @@
     box-shadow: 0 0 0 1px #c0c4cc;
 }
 
-
-.round-select .el-input {
-    --el-input-placeholder-color: black;
-}
-
-.el-select .el-input .el-select__caret.el-icon svg{
+.el-select .el-input .el-select__caret.el-icon svg {
     display: none;
 }
+
+.el-select .el-input .el-select__caret.el-icon{
+    text-align: center;
+    width:10px;
+    height: 10px;
+}
 .el-select .el-input .el-select__caret.el-icon::after {
-    content: ''; 
-    position: absolute; /* Абсолютное позиционирование */
-    left: 0px; bottom: -10px; /* Положение треугольника */
-    border: 6px solid transparent; /* Прозрачные границы */
-    border-top: 6px solid black; /* Добавляем треугольник */
-   }
+    content: '';
+    position: absolute;
+    left: calc(10px/2 - 6px); /* центр относительно el-icon*/
+    top: calc(10px/2 - 3px);
+    border: 6px solid transparent;
+    border-top: 6px solid #646262;
+    border: 6px solid transparent;
+    border-top: 6px solid black;
+}
+
+.el-select{
+    --el-fill-color-blank: #FBFBFB;
+    --el-input-placeholder-color: black;
+}
+.el-select .el-input {
+    --el-input-placeholder-color: black;
+}
+.el-input{
+    --el-text-color-placeholder: #D8D9D9;
+    --el-input-height:35px;
+}
+.el-input__wrapper{
+    --el-input-focus-border-color: #999;
+    --el-select-input-focus-border-color: #999;
+}
+.el-select .el-input .el-input__wrapper{
+    padding: 1px 12px;
+}
+.el-input .el-input__wrapper{
+    padding: 1px 8px;
+}
+
 /* TABS */
 
-.el-tabs--border-card{
-    border:none;
+.el-tabs--border-card {
+    border: none;
 }
-.el-tabs--border-card>.el-tabs__header{
-    padding: 0 0  0px 15px;
+
+.el-tabs--border-card>.el-tabs__header {
+    padding: 0 0 0px 15px;
     background: #EFEFEF;
-    --el-fill-color-light:#EFEFEF;
-    --el-border-color-light:#EFEFEF;
+    --el-fill-color-light: #EFEFEF;
+    --el-border-color-light: #EFEFEF;
 
 }
 
-.el-tabs__item{
+.el-tabs__item {
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
     padding: 0 15px;
-    border:none;
+    border: none;
     --el-tabs-header-height: 50px;
     --el-color-primary: black;
 }
-.el-tabs--border-card>.el-tabs__header .el-tabs__item{
-    border:none;
+
+.el-tabs--border-card>.el-tabs__header .el-tabs__item {
+    border: none;
 }
 
-.el-tabs--bottom .el-tabs--left>.el-tabs__header .el-tabs__item:nth-child(2), .el-tabs--bottom .el-tabs--right>.el-tabs__header .el-tabs__item:nth-child(2), .el-tabs--bottom.el-tabs--border-card>.el-tabs__header .el-tabs__item:nth-child(2), .el-tabs--bottom.el-tabs--card>.el-tabs__header .el-tabs__item:nth-child(2), .el-tabs--top .el-tabs--left>.el-tabs__header .el-tabs__item:nth-child(2), .el-tabs--top .el-tabs--right>.el-tabs__header .el-tabs__item:nth-child(2), .el-tabs--top.el-tabs--border-card>.el-tabs__header .el-tabs__item:nth-child(2), .el-tabs--top.el-tabs--card>.el-tabs__header .el-tabs__item:nth-child(2) {
+.el-tabs--bottom .el-tabs--left>.el-tabs__header .el-tabs__item:nth-child(2),
+.el-tabs--bottom .el-tabs--right>.el-tabs__header .el-tabs__item:nth-child(2),
+.el-tabs--bottom.el-tabs--border-card>.el-tabs__header .el-tabs__item:nth-child(2),
+.el-tabs--bottom.el-tabs--card>.el-tabs__header .el-tabs__item:nth-child(2),
+.el-tabs--top .el-tabs--left>.el-tabs__header .el-tabs__item:nth-child(2),
+.el-tabs--top .el-tabs--right>.el-tabs__header .el-tabs__item:nth-child(2),
+.el-tabs--top.el-tabs--border-card>.el-tabs__header .el-tabs__item:nth-child(2),
+.el-tabs--top.el-tabs--card>.el-tabs__header .el-tabs__item:nth-child(2) {
     padding-left: 15px;
 }
 
@@ -109,9 +148,7 @@
 
 
 @media screen and (max-width: 900px) {
-    .el-button{
-        white-space:normal;
+    .el-button {
+        white-space: normal;
     }
 }
-
-

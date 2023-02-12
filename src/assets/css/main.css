@@ -15,5 +15,9 @@ body {
 .row {
     display: flex;
     align-items: center;
-    margin: 9px 0;
+
+}
+
+h2 {
+    padding-bottom: 10px;
 }
