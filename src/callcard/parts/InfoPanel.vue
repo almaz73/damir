@@ -21,10 +21,35 @@
         </div>
 
       </div>
-      <h2>Место вызова</h2>
+      <div class="row">
+        <h2>Место вызова</h2> <el-checkbox></el-checkbox>
+      </div>
       <div class="panel__block">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, natus consectetur! Nisi officia, modi tempora
-        non maxime ab minus quaerat expedita repellat alias atque incidunt architecto tempore sequi consequuntur sint.
+        <div class="area">
+          <el-button closeable round >Чувашия</el-button>
+          <el-button closeable round >Чебоксары</el-button><br>
+          <el-input></el-input>
+        </div>
+        <div class="row">
+          <label>Тип</label><el-select></el-select>
+          <label>Объект</label><el-select></el-select>
+        </div>
+        <div class="row">
+          <label>Регион</label><el-select></el-select>
+          <label>Улица</label><el-select></el-select>
+        </div>
+        <div class="row">
+          <label>Мо</label><el-select></el-select>
+          <label>Подробно</label>
+          <div class="row">
+            <el-input placeholder="дом"></el-input>
+            <el-input placeholder="корп"></el-input>
+          </div>
+          <div class="row">
+            <el-input placeholder="Подъезд"></el-input>
+            <el-input placeholder="Этаж"></el-input>
+          </div>
+        </div>
       </div>
       <h2>Сведения о больном</h2>
     </div>
@@ -54,12 +79,20 @@ export default {
 }
 </script>
 <style scoped>
+
+.area{
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
 .panel {
 
   background: white;
   display: flex;
 
 }
+
 
 .panel__section {
   padding: 26px 28px 10px 28px;
@@ -89,7 +122,7 @@ export default {
 .panel__activity {
   display: flex;
   width: 100%;
-  
+
 }
 
 .row--margin {
@@ -125,9 +158,9 @@ export default {
   .panel__activity {
     display: flex;
     width: 90%;
-  } 
+  }
   .panel__section{
     padding: 16px 10px 10px 10px;
-  } 
+  }
 }
 </style>
