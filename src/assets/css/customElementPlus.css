@@ -44,6 +44,34 @@
     --el-input-text-color: black;
 }
 
+
+.el-button[closeable]{
+    position: relative;
+    background: #E3F3FF;
+    padding:8px 30px 8px 15px;
+    box-shadow: none;
+
+}
+
+.el-button[closeable]:before,
+.el-button[closeable]:after {
+    content: "";
+    position: absolute;
+    top:15px;
+    right: 10px;
+    width: 10px;
+    height: 2px;
+    background: #646262;
+}
+
+.el-button[closeable]:before {
+    transform: rotate(45deg);
+}
+
+.el-button[closeable]:after {
+    transform: rotate(-45deg);
+}
+
 /* types of select */
 .round-select {
     margin: 0px 15px;
@@ -104,6 +132,12 @@
     padding: 1px 8px;
 }
 
+.none-outlines .el-input__wrapper{
+    box-shadow: none;
+    border: none;
+}
+
+
 /* TABS */
 
 .el-tabs--border-card {
@@ -151,4 +185,22 @@
     .el-button {
         white-space: normal;
     }
+}
+
+/* CHECKBOX */
+
+.el-checkbox {
+    --el-checkbox-font-size: 18px;
+    --el-checkbox-checked-text-color:black;
+    --el-checkbox-input-height: 20px;
+    --el-checkbox-input-width: 20px;
+    --el-checkbox-border-radius:5px;
+}
+.el-checkbox__inner::after{
+    height: 10px;
+    left: 7px;
+    top: 2px;
+    border: 2px solid var(--el-checkbox-checked-icon-color);
+    border-left: 0;
+    border-top: 0;
 }

@@ -21,33 +21,54 @@
         </div>
 
       </div>
-      <div class="row">
-        <h2>Место вызова</h2> <el-checkbox></el-checkbox>
+      <div class="row row--beatween">
+        <h2>Место вызова</h2> <el-checkbox label="Только местные объекты" />
       </div>
       <div class="panel__block">
         <div class="area">
-          <el-button closeable round >Чувашия</el-button>
-          <el-button closeable round >Чебоксары</el-button><br>
-          <el-input></el-input>
+          <el-button v-for="c in callPlaces" :key="c.id" closeable round @click="deleteCallPlace(c.id)">{{ c.name }}</el-button>
+          <el-input class="none-outlines italic" v-model="callPlaceText"  placeholder="Введите адрес"  @keyup.enter="addCallPlace()"/>
         </div>
-        <div class="row">
-          <label>Тип</label><el-select></el-select>
-          <label>Объект</label><el-select></el-select>
-        </div>
-        <div class="row">
-          <label>Регион</label><el-select></el-select>
-          <label>Улица</label><el-select></el-select>
-        </div>
-        <div class="row">
-          <label>Мо</label><el-select></el-select>
-          <label>Подробно</label>
-          <div class="row">
-            <el-input placeholder="дом"></el-input>
-            <el-input placeholder="корп"></el-input>
+        <div class="row row--beatween mobile-not-row">
+          <div class="panel__block__part" style="width: 50%;">
+            <div class="row row--margin">
+              <label style="width: 250px;">Тип</label><el-select class="panel__call-place"></el-select>
+            </div>
+            <div class="row row--margin">
+              <label style="width: 250px;">Регион</label><el-select class="panel__call-place"></el-select>
+            </div>
+            <div class="row row--margin">
+              <label style="width: 250px;">МО</label><el-select class="panel__call-place"></el-select>
+            </div>
+            <div class="row row--margin">
+              <label style="width: 250px;">НП</label><el-select class="panel__call-place"></el-select>
+            </div>
           </div>
-          <div class="row">
-            <el-input placeholder="Подъезд"></el-input>
-            <el-input placeholder="Этаж"></el-input>
+
+          <div class="panel__block__part" style="width: 46%;">
+            <div class="row row--margin">
+              <label style="width: 130px;">Объект</label><el-select class="panel__call-place"></el-select>
+            </div>
+            <div class="row row--margin">
+              <label style="width: 130px;">Улица</label><el-select class="panel__call-place"></el-select>
+            </div>
+            <div class="row row--not-align  row--margin">
+              <label style="width: 312px; margin-top:5px;">Подробно</label>
+              <div>
+                <span class="row">
+                  <el-input v-model="inp2" class="detail__num" placeholder="Дом"></el-input>
+                  <el-input v-model="inp2" class="detail__num" placeholder="Корп"></el-input>
+                  <el-input v-model="inp2" class="detail__num" placeholder="Стр"></el-input>
+                  <el-input v-model="inp2" class="detail__num" placeholder="Кв"></el-input>
+                </span>
+                <span class="row">
+                  <el-input v-model="inp2" class="detail__num" placeholder="Подъезд"></el-input>
+                  <el-input v-model="inp2" class="detail__num" placeholder="Этаж"></el-input>
+                  <el-input v-model="inp2" class="detail__num" placeholder="Домофон"></el-input>
+                </span>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -56,7 +77,7 @@
     <div class="panel__section panel__right">
       <h2>Информация об обслуживании </h2>
     </div>
-  </div>
+</div>
 </template>
 <script>
 export default {
@@ -72,18 +93,36 @@ export default {
           value: 'Option2',
           label: 'Option2',
         }],
+      callPlaces: [
+        { id: 1, name: "Чувашия" },
+        { id: 2, name: "Чебоксары" }
+      ],
+      callPlaceText: '',
       value: '',
-      inp1: ''
+      inp1: '',
+      inp2: '',
+    }
+
+  },
+  methods: {
+    deleteCallPlace(id) { this.callPlaces = this.callPlaces.filter(c =>  c.id !== id )},
+    addCallPlace(){
+      let callPlace = {
+        id: Date.now(),
+        name:this.callPlaceText,
+      }
+      this.callPlaces.push(callPlace);
+      this.callPlaceText = '';
     }
   }
 }
 </script>
 <style scoped>
-
-.area{
+.area {
   width: 100%;
   border: 1px solid #ddd;
   padding: 8px;
+  margin: 5px 0px 20px 0px;
 }
 
 .panel {
@@ -119,10 +158,28 @@ export default {
   font-size: 18px;
 }
 
+.panel__block__part {
+  margin-right: 30px;
+}
+
+.panel__block__part:last-child {
+  margin-right: 0px;
+}
+
 .panel__activity {
   display: flex;
   width: 100%;
 
+}
+
+.panel__block .row .detail__num {
+  flex-grow: 0;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.panel__block .row .detail__num:last-child {
+  margin-right: 0px;
 }
 
 .row--margin {
@@ -143,8 +200,20 @@ export default {
   --el-font-size-base: 16px;
 }
 
-.panel__activity .el-input {
+.el-input {
   --el-font-size-base: 19px;
+}
+
+.el-button[closeable] {
+  margin-bottom: 12px;
+}
+
+.el-checkbox {
+  margin-bottom: 7px;
+}
+
+.panel__call-place.el-select {
+  width: 100%;
 }
 
 @media screen and (max-width: 900px) {
@@ -155,12 +224,23 @@ export default {
     overflow: hidden;
     min-width: 52px;
   }
+
   .panel__activity {
     display: flex;
     width: 90%;
   }
-  .panel__section{
+
+  .panel__section {
     padding: 16px 10px 10px 10px;
+  }
+
+  .mobile-not-row {
+    flex-direction: column;
+  }
+
+  .panel__block__part {
+    margin-right: 0px;
+    width: 100% !important;
   }
 }
 </style>

@@ -26,9 +26,9 @@ header {
   position: fixed;
   width: 100%;
   background: #e9e6f3;
-  ;
   box-shadow: 0 0 5px black;
   height: 27px;
+  z-index:  10;
 }
 
 .header-height {
