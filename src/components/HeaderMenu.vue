@@ -35,7 +35,7 @@
 
 
       <!-- <el-button class="mobile-none"  @click="exit()">Выход</el-button> -->
-      <el-button @click="exit()" :type="plain" text class="exit"><img src="src/assets/img/icons/svg/exit.svg"
+      <el-button @click="exit()" :type="plain" text class="exit"><img src="@/assets/img/icons/svg/exit.svg"
           alt="Выход"><span class="exit-text">Выход</span> </el-button>
       <!-- <img class="mobile-exit" src="src/assets/img/icons/svg/exit.svg" @click="exit()"  alt="Выход"> -->
     </div>

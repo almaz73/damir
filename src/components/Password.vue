@@ -15,7 +15,7 @@
       <form>
         <p><input autocomplete="off" ref="login" type="text" placeholder="Введите логин"></p>
         <p><input autocomplete="off" ref="password" :type="isShowPassword?'text':'password'" placeholder="Пароль">
-          <img @click="isShowPassword=!isShowPassword" class="autoriz-eye" src="../assets/images/autoriz/eye.png"/>
+          <img @click="isShowPassword=!isShowPassword" class="autoriz-eye" src="@/assets/img/eye.png"/>
         </p>
         <button @click.stop.prevent="onSubmit()">ВХОД</button>
       </form>
