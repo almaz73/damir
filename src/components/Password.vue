@@ -4,20 +4,18 @@
     <div class="autoriz">
       <h3>Авторизация</h3>
       <div class="autoriz-icon">
-        <img src="../assets/img/systemL.png" height="82" width="84"/>
+        <img src="../assets/img/systemL.png" height="82" width="84" />
       </div>
 
       <div class="alert-danger" v-if="isErr">
         Пара логин-пароль не соответствует ни одному пользователю
       </div>
 
-      <label>Логин</label>
       <form>
-        <p><input autocomplete="off" ref="login" type="text" placeholder="Введите логин"></p>
-        <p><input autocomplete="off" ref="password" :type="isShowPassword?'text':'password'" placeholder="Пароль">
-          <img @click="isShowPassword=!isShowPassword" class="autoriz-eye" src="@/assets/img/eye.png"/>
+        <p><el-input v-model="login" autocomplete="off" ref="login" type="text" placeholder="Логин" /></p>
+        <p><el-input v-model="pass" type="password" placeholder="Пароль"  show-password />
         </p>
-        <button @click.stop.prevent="onSubmit()">ВХОД</button>
+        <button @click.stop.prevent="onSubmit()">Войти</button>
       </form>
     </div>
   </div>
@@ -31,7 +29,9 @@ export default {
   data() {
     return {
       isShowPassword: false,
-      isErr: false
+      isErr: false,
+      pass:'',
+      login:'',
     }
   },
   methods: {
@@ -43,7 +43,7 @@ export default {
       this.$root.username = username;
 
 
-      this.$router.push({path: '/'});
+      this.$router.push({ path: '/' });
 
       /*
       await axios.post('/ambulance/login', obj)
@@ -64,7 +64,6 @@ export default {
 };
 </script>
 <style>
-
 .alert-danger {
   background-color: #f2dede;
   border-color: #ebccd1;
@@ -85,31 +84,38 @@ export default {
 .root {
   height: 100vh;
   align-items: center;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(243, 242, 243, 1) 100%);
 }
+
+
+.autoriz {
+  top: calc(50% - 500px/2);
+  position: relative;
+  margin: auto;
+  width: 500px;
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
+  padding: 25px;
+}
+
 
 .autoriz h3 {
   top: 0;
   position: relative;
   padding: 15px 25px 15px 25px;
-  margin: -35px;
-  background-color: #d2d6db;
+  margin: -25px;
+  background-color: #D2D5DA;
   color: #555;
-  border: 1px solid #fff;
-  margin-bottom: 50px;
-}
-
-.autoriz {
-  top: calc(10%);
-  position: relative;
-  margin: auto;
-  width: 398px;
-  height: 411px;
-  background: #FFFFFF;
-  border: 1px solid #C4C4C4;
-  box-sizing: border-box;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.18);
-  border-radius: 3px;
-  padding: 36px;
+  border: 0.5px solid #fff;
+  margin-bottom: 35px;
+  font-weight: 100;
+  font-size: 22px;
+  letter-spacing: 1px;
+  border-radius: 6px 6px 0px 0px;
 }
 
 .autoriz-icon {
@@ -131,46 +137,27 @@ export default {
   z-index: 1;
 }
 
-.autoriz input {
-  margin-top: 18px;
-  line-height: 24px;
-  font-size: 16px;
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid #9e9e9e;
-  padding: 8px 0;
-  outline: none;
+.autoriz .el-input {
+  margin-bottom: 10px;
+  --el-input-height:45px;
+  --el-font-size-base:16px;
 
-}
-
-.autoriz input:hover {
-  border-bottom: 2px solid #304FFE;
 }
 
 .autoriz button {
-  margin-top: 20px;
-  background: #304FFE;
-  border-radius: 3px;
+  margin-top: 15px;
+  background: #418BCA;
+  border-radius: 6px;
   border: none;
   width: 100%;
   height: 40px;
   color: white;
   cursor: pointer;
+  font-size:18px;
 }
 
 .autoriz p {
   position: relative;
 }
 
-.autoriz-eye {
-  position: absolute;
-  right: 0px;
-  top: 20px;
-  padding: 7px;
-  cursor: pointer;
-}
-
-.autoriz-eye:hover {
-  background: #eee;
-}
 </style>

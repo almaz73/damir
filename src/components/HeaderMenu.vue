@@ -58,11 +58,12 @@ export default {
       this.activeButton = useTriggerMenu().show
     },
     exit() {
-      console.log('выход',);
-      axios.post('/ambulance/logout').then(resp => {
-        this.$router.push({ path: '/login' });
-      })
-    },
+      console.log('выход');
+      this.$router.push({ path: '/login' });
+      // axios.post('/ambulance/logout').then(resp => {
+      //   this.$router.push({ path: '/login' });
+      // })
+    }, 
   },
 }
 </script>
