@@ -12,7 +12,7 @@
 
 
   <!--  Для стилизации панели авторизации -->
-  <TransparentTemplate src="login.JPG" top="0" left="0" use="1"/>
+  <!-- <TransparentTemplate src="login.JPG" top="0" left="0" use="1"/> -->
 
 </template>
 
