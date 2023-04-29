@@ -1,7 +1,8 @@
 <template>
   <div class="links">
     <a target="_blank" href="https://element-plus.org/en-US/component/button.html">https://element-plus.org</a> |
-    <a target="_blank" href="https://www.figma.com/file/WmV8FxlinHsseOhJjsUgTh/%D0%94%D0%B8%D1%81%D0%BF%D0%B5%D1%82%D1%87%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F-%E2%80%94-%D1%81%D0%BA%D0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C?node-id=294%3A37815">Фигма</a>
+    <a target="_blank"
+       href="https://www.figma.com/file/WmV8FxlinHsseOhJjsUgTh/%D0%94%D0%B8%D1%81%D0%BF%D0%B5%D1%82%D1%87%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F-%E2%80%94-%D1%81%D0%BA%D0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C?node-id=294%3A37815">Фигма</a>
 
   </div>
   <div>
@@ -108,43 +109,35 @@
       </tr>
     </table>
 
-<!--    <h3>-->
-<!--      Как работают модальные окна:-->
-<!--    </h3>-->
-<!--    <p>Они независимы от родителей, но зависят от местоположения откуда открываются.</p>-->
-<!--    <p>Для модалок важен параметр name. Чтобы открывать модалку, создается событие (EventBus), и каждая модалка слушает,-->
-<!--      не её ли имя прозвучало.</p>-->
-<!--    <p>Наряду с eventBus можно передать callback-функцию и получить ответ от модалки с результатами</p>-->
-<!--    <p>Чтобы создать новую модалку, достаточно копипастить например ToPrint_Modal.vue и дать названию файла и параметру name-->
-<!--      новое имя.</p>-->
-<!--    <p>Внутри ModalWrapper параметры костомизации, можно изменить: ширину ,высоту, смещение сверху, кнопки (например yes/no), позиционирование кнопок</p>-->
+    <!--    <h3>-->
+    <!--      Как работают модальные окна:-->
+    <!--    </h3>-->
+    <!--    <p>Они независимы от родителей, но зависят от местоположения откуда открываются.</p>-->
+    <!--    <p>Для модалок важен параметр name. Чтобы открывать модалку, создается событие (EventBus), и каждая модалка слушает,-->
+    <!--      не её ли имя прозвучало.</p>-->
+    <!--    <p>Наряду с eventBus можно передать callback-функцию и получить ответ от модалки с результатами</p>-->
+    <!--    <p>Чтобы создать новую модалку, достаточно копипастить например ToPrint_Modal.vue и дать названию файла и параметру name-->
+    <!--      новое имя.</p>-->
+    <!--    <p>Внутри ModalWrapper параметры костомизации, можно изменить: ширину ,высоту, смещение сверху, кнопки (например yes/no), позиционирование кнопок</p>-->
 
   </div>
 </template>
-<script>
+<script setup>
+import {onMounted, ref} from "vue";
 
+let inp1 = ref('')
+let date1 = ref(new Date())
+let login = ref('')
+let options = ref([{value: 'Option1', label: 'Выберите образование'}, {value: 'Option2', label: 'Option2'}])
+let select1 = ref({})
 
-export default {
-  name: 'HelpForDeveloper',
-  data() {
-    return {
-      inp1:'',
-      date1: new Date(),
-      login: '',
-      options: [{value: 'Option1', label: 'Выберите образование'}, {value: 'Option2', label: 'Option2'}],
-      select1: {},
-    }
-  },
-  components: {},
-  mounted() {
-    document.querySelector('#b1').innerText = `<el-input label="Label"/>`
-    document.querySelector('#b1_').innerText = `<span class="label">Label</span>\n<el-input/>`
-
-  }
-}
+onMounted(() => {
+  document.querySelector('#b1').innerText = `<el-input label="Label"/>`
+  document.querySelector('#b1_').innerText = `<span class="label">Label</span>\n<el-input/>`
+})
 </script>
 <style scoped>
-.links{
+.links {
   text-align: center;
 }
 

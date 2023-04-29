@@ -5,7 +5,7 @@
       </div>
       <div class="opac">
         <div class="template" :style="{opacity:value/100, top:top+'px', left:left+'px'}">
-          <img :src="image" style="width: 100%">
+          <img :src="image" :style="{width: originSize}">
         </div>
       </div>
     </div>
@@ -32,6 +32,10 @@
       },
       toolLeft:{
         type: Number
+      },
+      originSize:{
+        type: String,
+        default: '100%'
       }
     },
     data() {

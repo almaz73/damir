@@ -1,25 +1,22 @@
 <template>
   <header>
-    <HeaderMenu />
+    <HeaderMenu/>
   </header>
-  <div class="header-height"></div>
+  <div className="header-height"></div>
   <main>
-    <LeftMenu />
-    <slot />
+    <LeftMenu/>
+    <slot/>
   </main>
 </template>
-<script>
+<script setup>
+/***
+ *Этот модуль как оболочка для страниц будет содержать общиее мнею , верхнее фиксированное и левое основное,
+ * а посередени в слоте будет отображать страницу'
+ */
 import HeaderMenu from "./HeaderMenu.vue";
 import LeftMenu from "./LeftMenu.vue";
 
-export default {
-  /***
-   *Этот модуль как оболочка для страниц будет содержать общиее мнею , верхнее фиксированное и левое основное,
-   * а посередени в слоте будет отображать страницу'
-   */
-  name: 'Shell',
-  components: { LeftMenu, HeaderMenu },
-}
+
 </script>
 <style scoped>
 header {
@@ -28,7 +25,7 @@ header {
   background: #e9e6f3;
   box-shadow: 0 0 5px black;
   height: 27px;
-  z-index:  10;
+  z-index: 10;
 }
 
 .header-height {

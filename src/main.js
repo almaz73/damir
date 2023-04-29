@@ -5,10 +5,10 @@ import ElementPlus from 'element-plus'
 import ru from 'element-plus/dist/locale/ru.min.mjs'
 import 'element-plus/dist/index.css'
 
-import './assets/css/customElementPlus.css';
-import './assets/css/main.css';
+import './callcard_old/assets/css/customElementPlus.css';
+import './callcard_old/assets/css/main.css';
 
-import router from './plugins/router'
+import router from './router.js'
 createApp(App)
     .use(router)
     .use(createPinia())

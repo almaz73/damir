@@ -4,7 +4,7 @@
     <div class="autoriz">
       <h3>Авторизация</h3>
       <div class="autoriz-icon">
-        <img src="../assets/img/systemL.png" height="82" width="84" />
+        <img src="../callcard_old/assets/img/systemL.png" height="82" width="84"/>
       </div>
 
       <div class="alert-danger" v-if="isErr">
@@ -12,8 +12,11 @@
       </div>
 
       <form>
-        <p><el-input v-model="login" autocomplete="off" ref="login" type="text" placeholder="Логин" /></p>
-        <p><el-input v-model="pass" type="password" placeholder="Пароль"  show-password />
+        <p>
+          <el-input v-model="login" autocomplete="off"  type="text" placeholder="Логин"/>
+        </p>
+        <p>
+          <el-input v-model="password" type="password"  placeholder="Пароль" show-password/>
         </p>
         <button @click.stop.prevent="onSubmit()">Войти</button>
       </form>
@@ -21,49 +24,35 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import axios from "axios";
+import {ref} from "vue";
+import {useRouter} from "vue-router";
 
-export default {
-  name: 'Password',
-  data() {
-    return {
-      isShowPassword: false,
-      isErr: false,
-      pass:'',
-      login:'',
-    }
-  },
-  methods: {
-    async onSubmit() {
-      let username = this.$refs.login.value;
-      let password = this.$refs.password.value;
-      let obj = `username=${username}&password=${password}`;
+const router = useRouter()
+let isErr = ref('false')
+let password = ref('')
+let login = ref('')
 
-      this.$root.username = username;
+async function onSubmit() {
+  let user = document.querySelector('[placeholder="Логин"]').value;
+  let pass = document.querySelector('[placeholder="Пароль"]').value;
+  let obj = `username=${user}&password=${pass}`;
 
-
-      this.$router.push({ path: '/' });
-
-      /*
-      await axios.post('/ambulance/login', obj)
-          .then(
-              resp => {
-                this.$router.push({path: '/'});
-                this.isErr = false;
-              },
-              err => {
-                if (err.response.status !== 401) console.log('notification', err.message);
-                this.isErr = true;
-              }
-          );
-
-      */
-    }
-  }
-};
+  await axios.post('/ambulance/login', obj)
+      .then(
+          resp => {
+            router.push({path: '/'});
+            isErr.value = false;
+          },
+          err => {
+            isErr.value = true;
+          }
+      );
+}
 </script>
 <style>
+
 .alert-danger {
   background-color: #f2dede;
   border-color: #ebccd1;
@@ -90,7 +79,7 @@ export default {
 
 
 .autoriz {
-  top: calc(50% - 500px/2);
+  top: calc(50% - 500px / 2);
   position: relative;
   margin: auto;
   width: 500px;
@@ -139,8 +128,8 @@ export default {
 
 .autoriz .el-input {
   margin-bottom: 10px;
-  --el-input-height:45px;
-  --el-font-size-base:16px;
+  --el-input-height: 45px;
+  --el-font-size-base: 16px;
 
 }
 
@@ -153,7 +142,7 @@ export default {
   height: 40px;
   color: white;
   cursor: pointer;
-  font-size:18px;
+  font-size: 18px;
 }
 
 .autoriz p {

@@ -9,7 +9,7 @@
           <label class="panel__block__label" style="width: 200px;">Повод</label>
           <div class="panel__activity">
             <el-select class="panel__el" style="width: 540px;" v-model="value" placeholder="Повод">
-              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
+              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"/>
             </el-select>
             <el-input class="panel__el" v-model="inp1" placeholder="Указать вручную"></el-input>
             <el-button class="panel__el" round>Опрос</el-button>
@@ -24,40 +24,48 @@
 
       </div>
       <div class="row row--beatween">
-        <h2>Место вызова</h2> <el-checkbox label="Только местные объекты" />
+        <h2>Место вызова</h2>
+        <el-checkbox label="Только местные объекты"/>
       </div>
       <div class="panel__block">
         <div class="area">
-          <el-button v-for="c in callPlaces" :key="c.id" closeable round @click="deleteCallPlace(c.id)">{{ c.name
-          }}</el-button>
+          <el-button v-for="c in callPlaces" :key="c.id" closeable round @click="deleteCallPlace(c.id)">
+            {{c.name}}
+          </el-button>
           <el-input class="none-outlines italic" v-model="callPlaceText" placeholder="Введите адрес"
-            @keyup.enter="addCallPlace()" />
+                    @keyup.enter="addCallPlace()"/>
         </div>
         <div class="row row--beatween mobile-not-row">
           <div class="panel__block__part" style="width: 50%;">
             <div class="row row--margin">
-              <label class="panel__block__label" style="width: 250px;">Тип</label><el-select class="panel__call-place"></el-select>
+              <label class="panel__block__label" style="width: 250px;">Тип</label>
+              <el-select class="panel__call-place"></el-select>
             </div>
             <div class="row row--margin">
-              <label class="panel__block__label" style="width: 250px;">Регион</label><el-select class="panel__call-place"></el-select>
+              <label class="panel__block__label" style="width: 250px;">Регион</label>
+              <el-select class="panel__call-place"></el-select>
             </div>
             <div class="row row--margin">
-              <label class="panel__block__label" style="width: 250px;">МО</label><el-select class="panel__call-place"></el-select>
+              <label class="panel__block__label" style="width: 250px;">МО</label>
+              <el-select class="panel__call-place"></el-select>
             </div>
             <div class="row row--margin">
-              <label class="panel__block__label" style="width: 250px;">НП</label><el-select class="panel__call-place"></el-select>
+              <label class="panel__block__label" style="width: 250px;">НП</label>
+              <el-select class="panel__call-place"></el-select>
             </div>
           </div>
 
           <div class="panel__block__part" style="width: 46%;">
             <div class="row row--margin">
-              <label class="panel__block__label" style="width: 130px;">Объект</label><el-select class="panel__call-place"></el-select>
+              <label class="panel__block__label" style="width: 130px;">Объект</label>
+              <el-select class="panel__call-place"></el-select>
             </div>
             <div class="row row--margin">
-              <label class="panel__block__label" style="width: 130px;">Улица</label><el-select class="panel__call-place"></el-select>
+              <label class="panel__block__label" style="width: 130px;">Улица</label>
+              <el-select class="panel__call-place"></el-select>
             </div>
             <div class="row row--not-align  row--margin">
-              <label class="panel__block__label"  style="width: 312px; margin-top:5px;">Подробно</label>
+              <label class="panel__block__label" style="width: 312px; margin-top:5px;">Подробно</label>
               <div>
                 <span class="row">
                   <el-input v-model="inp2" class="detail__num" placeholder="Дом"></el-input>
@@ -82,56 +90,46 @@
 
       <h2>Информация об обслуживании </h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum modi sed vero ipsum perspiciatis, excepturi
-        nesciunt unde? Natus eligendi hic culpa mollitia eaque, officia, ipsam consequatur tempore aut, vel inventore!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum modi sed vero ipsum perspiciatis, excepturi
-        nesciunt unde? Natus eligendi hic culpa mollitia eaque, officia, ipsam consequatur tempore aut, vel inventore!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum modi sed vero ipsum perspiciatis, excepturi
-        nesciunt unde? Natus eligendi hic culpa mollitia eaque, officia, ipsam consequatur tempore aut, vel inventore!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum modi sed vero ipsum perspiciatis, excepturi
-        nesciunt unde? Natus eligendi hic culpa mollitia eaque, officia, ipsam consequatur tempore aut, vel inventore!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum modi sed vero ipsum perspiciatis, excepturi
-        nesciunt unde? Natus eligendi hic culpa mollitia eaque, officia, ipsam consequatur tempore aut, vel inventore!</p>
+        nesciunt unde? Natus eligendi hic culpa mollitia eaque, officia, ipsam consequatur tempore aut, vel
+        inventore!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum modi sed vero ipsum perspiciatis, excepturi
+        nesciunt unde? Natus eligendi hic culpa mollitia eaque, officia, ipsam consequatur tempore aut, vel
+        inventore!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum modi sed vero ipsum perspiciatis, excepturi
+        nesciunt unde? Natus eligendi hic culpa mollitia eaque, officia, ipsam consequatur tempore aut, vel
+        inventore!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum modi sed vero ipsum perspiciatis, excepturi
+        nesciunt unde? Natus eligendi hic culpa mollitia eaque, officia, ipsam consequatur tempore aut, vel
+        inventore!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum modi sed vero ipsum perspiciatis, excepturi
+        nesciunt unde? Natus eligendi hic culpa mollitia eaque, officia, ipsam consequatur tempore aut, vel
+        inventore!</p>
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: 'InfoPanel',
-  data() {
-    return {
-      options: [
-        {
-          value: 'Option1',
-          label: 'Option1',
-        },
-        {
-          value: 'Option2',
-          label: 'Option2',
-        }],
-      callPlaces: [
-        { id: 1, name: "Чувашия" },
-        { id: 2, name: "Чебоксары" }
-      ],
-      callPlaceText: '',
-      value: '',
-      inp1: '',
-      inp2: '',
-      activeLeftSection: true,
-    }
+<script setup>
 
-  },
-  methods: {
-    deleteCallPlace(id) { this.callPlaces = this.callPlaces.filter(c => c.id !== id) },
-    addCallPlace() {
-      let callPlace = {
-        id: Date.now(),
-        name: this.callPlaceText,
-      }
-      this.callPlaces.push(callPlace);
-      this.callPlaceText = '';
-    },
-    changeActiveSectionMobile() { activeLeftSection = !activeLeftSection }
+import {ref} from "vue";
+
+let options = ref([{value: 'Option1', label: 'Option1',}, {value: 'Option2', label: 'Option2',}])
+let callPlaces = ref([{id: 1, name: "Чувашия"}, {id: 2, name: "Чебоксары"}])
+let activeLeftSection = ref(true)
+let callPlaceText = ref('')
+let value = ref('')
+let inp1 = ref('')
+let inp2 = ref('')
+
+function deleteCallPlace(id) {
+  this.callPlaces = this.callPlaces.filter(c => c.id !== id)
+}
+
+function addCallPlace() {
+  let callPlace = {
+    id: Date.now(),
+    name: this.callPlaceText,
   }
+  this.callPlaces.push(callPlace);
+  this.callPlaceText = '';
 }
 </script>
 <style scoped>
@@ -246,11 +244,11 @@ export default {
 }
 
 
-
 @media screen and (max-width: 900px) {
-  .mobile-switch-section{
+  .mobile-switch-section {
     display: block;
   }
+
   .panel__block label {
     font-size: 18px;
     text-overflow: ellipsis;
@@ -303,26 +301,31 @@ export default {
     padding: 15px;
 
   }
-  .panel__right.panel__section_active{
+
+  .panel__right.panel__section_active {
     animation-duration: .4s;
     animation-name: slideinRight;
   }
-  .panel__left.panel__section_active{
+
+  .panel__left.panel__section_active {
     animation-duration: .4s;
     animation-name: slideinLeft;
   }
-  .right-line{
+
+  .right-line {
     border-right: none;
   }
-  .panel__block__label{
-    width:200px !important;
+
+  .panel__block__label {
+    width: 200px !important;
   }
 
-  
+
 }
+
 @media screen and (max-width: 576px) {
-  .panel__activity{
-    width:80%;
+  .panel__activity {
+    width: 80%;
   }
 }
 

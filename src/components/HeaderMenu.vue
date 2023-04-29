@@ -35,36 +35,30 @@
 
 
       <!-- <el-button class="mobile-none"  @click="exit()">Выход</el-button> -->
-      <el-button @click="exit()" :type="plain" text class="exit"><img src="@/assets/img/icons/svg/exit.svg"
+      <el-button @click="exit()" text class="exit"><img src="@/callcard_old/assets/img/icons/svg/exit.svg"
           alt="Выход"><span class="exit-text">Выход</span> </el-button>
       <!-- <img class="mobile-exit" src="src/assets/img/icons/svg/exit.svg" @click="exit()"  alt="Выход"> -->
     </div>
   </div>
 </template>
-<script>
+<script setup>
 import axios from "axios";
-import { useTriggerMenu } from "../callcard/store/triggerMenu";
+import {useTriggerMenu} from "../stores/triggerMenu.js";
+import {ref} from "vue";
+import {useRouter} from "vue-router";
 
-export default {
-  name: 'HeaderMenu',
-  data() {
-    return {
-      activeButton: false,
-    }
-  },
-  methods: {
-    triggerMenu() {
-      useTriggerMenu().show = !useTriggerMenu().show
-      this.activeButton = useTriggerMenu().show
-    },
-    exit() {
-      console.log('выход');
-      this.$router.push({ path: '/login' });
-      // axios.post('/ambulance/logout').then(resp => {
-      //   this.$router.push({ path: '/login' });
-      // })
-    }, 
-  },
+let activeButton = ref(false)
+const router = useRouter()
+
+function triggerMenu() {
+  useTriggerMenu().show = !useTriggerMenu().show
+  activeButton.value = useTriggerMenu().show
+}
+
+function exit() {
+  axios.post('/ambulance/logout').then(resp => {
+    router.push({path: '/login'});
+  })
 }
 </script>
 <style scoped>
@@ -129,7 +123,6 @@ button {
   font-size: 15px;
   padding: 2px 6px;
 }
-
 
 
 .server-time {
@@ -252,7 +245,8 @@ button {
   .exit .exit-text {
     display: none;
   }
-  .exit{
+
+  .exit {
     height: 100%;
   }
 }
