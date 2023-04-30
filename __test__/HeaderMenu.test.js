@@ -1,7 +1,7 @@
 import {describe, beforeEach, it, expect} from 'vitest'
 import {mount} from '@vue/test-utils'
-import HeaderMenu from '../HeaderMenu.vue'
-import router from '../../router.js'
+import HeaderMenu from '../src/components/HeaderMenu.vue'
+import router from '../src/router.js'
 import {setActivePinia, createPinia} from 'pinia'
 
 

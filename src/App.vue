@@ -11,16 +11,19 @@
   <!-- <TransparentTemplate src="head.gif" top="0" left="0" use="1"/> -->
 
   <!--  Для стилизации панели авторизации -->
-  <!-- <TransparentTemplate src="login.JPG" top="0" left="0" use="1"/> -->
+<!--   <TransparentTemplate src="login.JPG" top="0" left="0" use="1"/>-->
 
   <!-- Треться версия дизайна -->
-  <TransparentTemplate src="3вариант.png" top="0" left="0" use="1" originSize="1200px"/>
+  <TransparentTemplate src="variant_3.png" top="0" left="0" use="1" originSize="1200px"/>
+
+  <TmpLinks/>
 
 </template>
 
 <script setup>
 import TransparentTemplate from "./components/TransparentTemplate.vue";
 import {onMounted} from "vue";
+import TmpLinks from "./components/TmpLinks.vue";
 onMounted(()=>{
   console.log('== === === === 111 cardNumber', window.cardNumber);
   // window.cardNumber - при открытии из основной программы получаем id КТ

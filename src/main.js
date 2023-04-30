@@ -5,8 +5,7 @@ import ElementPlus from 'element-plus'
 import ru from 'element-plus/dist/locale/ru.min.mjs'
 import 'element-plus/dist/index.css'
 
-import './callcard_old/assets/css/customElementPlus.css';
-import './callcard_old/assets/css/main.css';
+import './assets/css/index.css'
 
 import router from './router.js'
 createApp(App)
