@@ -1,4 +1,5 @@
 @import './kt.css';
+@import './customiz.css';
 
 body {
     padding: 0;
@@ -9,4 +10,11 @@ body {
 
 :root {
     --gray-back: #EFEFEF;
+    --blue-text: #238FD9;
+    --dark-gray: #D8D9D9;
+}
+
+.row {
+    display: flex;
+    align-items: center;
 }

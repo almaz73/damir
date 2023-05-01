@@ -9,9 +9,11 @@
 
 header {
     background: var(--gray-back);
-    height: 40px;
+    height: 39px;
     width: 100%;
     position: fixed;
+    z-index: 10;
+    box-shadow: 0 0 3px var(--dark-gray);
 }
 
 nav {
@@ -41,9 +43,6 @@ section {
     grid-area: section;
 }
 
-/* end Разметка раздела */
-
-
 /* Левое меню*/
 .nav-menu {
     margin: -1px;
@@ -67,15 +66,16 @@ section {
 
 .nav-menu .active {
     background: white;
-    color: #238FD9
+    color: var(--blue-text);
 }
-
-/* end Левое меню*/
 
 /* Верхнее меню */
 
 .herder-menu {
     white-space: nowrap;
+    display: flex;
+    padding: 3px;
+    justify-content: space-around;
 }
 
 .herder-menu .sandwich {
@@ -88,4 +88,19 @@ section {
         display: inline-block;
     }
 }
-/* end Верхнее меню */
+
+/* Содержимое КТ */
+.caption-kt {
+    padding: 0px 25px;
+    margin-top: -3px;
+}
+
+.caption-kt h1 {
+    display: inline-block;
+}
+
+.head-add {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

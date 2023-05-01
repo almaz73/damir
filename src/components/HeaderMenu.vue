@@ -10,8 +10,6 @@ let activeButton = ref(false)
 function triggerMenu() {
   useTriggerMenu().show = !useTriggerMenu().show
   activeButton.value = useTriggerMenu().show
-
-  console.log('activeButton.value',activeButton.value);
 }
 
 function exit() {
@@ -23,44 +21,46 @@ function exit() {
 </script>
 <template>
   <div class="herder-menu">
-  <span class="sandwich">
-    <img src="../assets/img/headMenu/sandwich.PNG" @click="triggerMenu()"/>
-  </span>
+    <span class="sandwich">
+      <img src="../assets/img/headMenu/sandwich.PNG" @click="triggerMenu()"/>
+    </span>
 
-  [ 12:22 ]
-  <el-button>
-    версия
-  </el-button>
-  <el-button>
-    <img src="../assets/img/headMenu/testLink.png"/>
-    Тест связи
-  </el-button>
-  <el-button>
-    <img src="../assets/img/headMenu/documentation.png"/>
-    Документация
-  </el-button>
-  <el-button>
-    <img src="../assets/img/headMenu/112.png"/>
-    112
-  </el-button>
-  <el-button>
-    <img src="../assets/img/headMenu/support.png"/>
-    Техподдержка
-  </el-button>
-  <el-button>
-    <img src="../assets/img/headMenu/sign.png"/>
-    Подписать
-  </el-button>
-  <el-button>
-    <img src="../assets/img/headMenu/message.png"/>
-    Оповещение
-  </el-button>
+    [ 12:22 ]
+    <el-button>
+      версия
+    </el-button>
+    <el-button>
+      <img src="../assets/img/headMenu/testLink.png"/>
+      Тест связи
+    </el-button>
+    <el-button>
+      <img src="../assets/img/headMenu/documentation.png"/>
+      Документация
+    </el-button>
+    <el-button>
+      <img src="../assets/img/headMenu/112.png"/>
+      112
+    </el-button>
+    <el-button>
+      <img src="../assets/img/headMenu/support.png"/>
+      Техподдержка
+    </el-button>
+    <el-button>
+      <img src="../assets/img/headMenu/sign.png"/>
+      Подписать
+    </el-button>
+    <el-button>
+      <img src="../assets/img/headMenu/message.png"/>
+      Оповещение
+    </el-button>
 
-  <img src="../assets/img/headMenu/adm.png"/>
-  adminSMO
+    <el-button>
+      <img src="../assets/img/headMenu/adm.png"/>
+      adminSMP
+    </el-button>
 
-  <el-button @click="exit()">
-    Выход
-  </el-button>
+    <el-button @click="exit()">
+      Выход
+    </el-button>
   </div>
 </template>
