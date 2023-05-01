@@ -12,6 +12,7 @@ const link = 'http://192.168.83.98:28080/' // калитнинград
 
 export default defineConfig({
     plugins: [vue()],
+    // develop: false, - поппытка исключить из продуктовой сборки папку develop, не проверено
     server: {
         port: 7777,
         proxy: {

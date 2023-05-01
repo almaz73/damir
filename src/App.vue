@@ -21,9 +21,9 @@
 </template>
 
 <script setup>
-import TransparentTemplate from "./components/TransparentTemplate.vue";
+import TransparentTemplate from "./develop/TransparentTemplate.vue";
 import {onMounted} from "vue";
-import TmpLinks from "./components/TmpLinks.vue";
+import TmpLinks from "./develop/TmpLinks.vue";
 onMounted(()=>{
   console.log('== === === === 111 cardNumber', window.cardNumber);
   // window.cardNumber - при открытии из основной программы получаем id КТ

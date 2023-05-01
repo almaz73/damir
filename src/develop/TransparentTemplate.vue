@@ -62,7 +62,7 @@ function save() {
   height: 50vh;
   justify-content: flex-start;
   position: fixed;
-  top: 0;
+  top: 30px;
 }
 
 .tools .slider {

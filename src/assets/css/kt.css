@@ -8,7 +8,7 @@
 }
 
 header {
-    background: #EFEFEF;
+    background: var(--gray-back);
     height: 40px;
     width: 100%;
     position: fixed;
@@ -16,6 +16,25 @@ header {
 
 nav {
     grid-area: nav;
+}
+
+@media (width < 900px) {
+    .kt {
+        grid-template-columns: 1fr;
+        grid-template-areas:  'header' 'section';
+    }
+
+    nav {
+        position: absolute;
+        margin-left: -127px;
+        margin-top: 40px;
+        transition: margin-left .3s;
+    }
+
+    .nav-mobile--active {
+        width: 127px;
+        margin-left: 0;
+    }
 }
 
 section {
@@ -34,7 +53,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #EFEFEF;
+    background: var(--gray-back);
     padding: 8px 0;
     height: 65px;
     border-bottom: 1px solid #DDDEDE;
@@ -48,6 +67,25 @@ section {
 
 .nav-menu .active {
     background: white;
+    color: #238FD9
 }
 
 /* end Левое меню*/
+
+/* Верхнее меню */
+
+.herder-menu {
+    white-space: nowrap;
+}
+
+.herder-menu .sandwich {
+    display: none;
+    cursor: pointer;
+}
+
+@media (width < 900px) {
+    .herder-menu .sandwich {
+        display: inline-block;
+    }
+}
+/* end Верхнее меню */
