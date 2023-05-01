@@ -3,9 +3,6 @@
 body {
     padding: 0;
     margin: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background: white;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
     font-size: 1em;
-
-    min-height: 100%;
 }

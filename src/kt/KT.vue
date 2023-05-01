@@ -1,13 +1,15 @@
 <script setup>
-
+import NavMenu from "../components/NavMenu.vue";
 </script>
+
 <template>
-  <header></header>
-  <nav></nav>
-  <section></section>
-  <footer></footer>
-
-  KT.vue
-
+  <header> header</header>
+  <div class="kt">
+    <nav>
+      <NavMenu/>
+    </nav>
+    <section>
+      section
+    </section>
+  </div>
 </template>
-

@@ -32,7 +32,7 @@
 
 </template>
 <script setup>
-import Shell from "@/components/Shell.vue";
+import Shell from "@/components/old/Shell.vue";
 import {useCallcardStore} from "@/stores/callCardStores.js";
 import ReasonButtons from "./parts/ReasonButtons.vue";
 import {onMounted, ref} from 'vue'

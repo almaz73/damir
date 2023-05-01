@@ -43,7 +43,7 @@
 </template>
 <script setup>
 import axios from "axios";
-import {useTriggerMenu} from "../stores/triggerMenu.js";
+import {useTriggerMenu} from "@/stores/triggerMenu.js";
 import {ref} from "vue";
 import {useRouter} from "vue-router";
 
