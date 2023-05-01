@@ -1,32 +1,32 @@
 <template>
   <nav class="nav nav-mobile" :class="{ 'nav-mobile--active': triggerMenu.show }">
     <div class="col ">
-      <button class="button">
-        <img src="../../callcard_old/assets/img/icons/ambulancemonitor.png"><br>
-        <router-link class="button__text" to="/help">Help</router-link>
-      </button>
+<!--      <button class="button">-->
+<!--        <img src="../assets/img/icons/ambulancemonitor.png"><br>-->
+<!--        <router-link class="button__text" to="/help">Help</router-link>-->
+<!--      </button>-->
       <button class="button button--active">
-        <img src="../../callcard_old/assets/img/icons/ambulancemonitor.png"><br>
-        <router-link class="button__text " to="/callcard">Мониторинг</router-link>
+        <img src="../assets/img/icons/ambulancemonitor.png"><br>
+        <router-link class="button__text " to="/#">Мониторинг</router-link>
       </button>
       <button class="button">
-        <img src="../../callcard_old/assets/img/icons/newKT.png"><br>
-        <router-link class="button__text" to="/#">Новый КТ</router-link>
+        <img src="../assets/img/icons/newKT.png"><br>
+        <router-link class="button__text" to="/callcard#">Новый КТ</router-link>
       </button>
       <button class="button">
-        <img src="../../callcard_old/assets/img/icons/oo.png"><br>
+        <img src="../assets/img/icons/oo.png"><br>
         <router-link class="button__text" to="/#">Опер. обст</router-link>
       </button>
       <button class="button">
-        <img src="../../callcard_old/assets/img/icons/hospital.png"><br>
+        <img src="../assets/img/icons/hospital.png"><br>
         <router-link class="button__text" to="/#">Госпитализация</router-link>
       </button>
       <button class="button">
-        <img src="../../callcard_old/assets/img/icons/naryad.png"><br>
+        <img src="../assets/img/icons/naryad.png"><br>
         <router-link class="button__text" to="/#">Поликлиника</router-link>
       </button>
       <button class="button">
-        <img src="../../callcard_old/assets/img/icons/naryad.png"><br>
+        <img src="../assets/img/icons/naryad.png"><br>
         <router-link class="button__text" to="/#">Журнал</router-link>
       </button>
     </div>
