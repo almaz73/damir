@@ -27,21 +27,21 @@ import ServiceInfo from "./ServiceInfo.vue";
 
 .info__common {
   grid-area: info__common;
-  padding: 24px;
+  padding: 0 24px;
 }
 
 .info__address {
   grid-area: info__address;
-  padding: 24px;
+  padding: 0 24px;
 }
 
 .info__sickinfo {
   grid-area: info__sickinfo;
-  padding: 24px;
+  padding: 0 24px;
 }
 
 .info__service {
-  padding: 24px;
+  padding: 0 24px;
   grid-area: info__service;
   border-left: 1px solid var(--dark-gray);
 }

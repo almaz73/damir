@@ -14,12 +14,16 @@ let buttons = ref([{text: 'КВ заполнена', color: 'grey',},
 </script>
 
 <template>
-  <div class="buttons">
+  <div class="status-button">
     <el-button v-for="button in buttons" :class="[button.color]" class="round">{{ button.text }}</el-button>
   </div>
 </template>
 
 <style scoped>
+
+.status-button {
+  margin-bottom: 15px;
+}
 
 .grey {
   background: var(--dark-gray);

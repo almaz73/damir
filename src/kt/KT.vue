@@ -34,7 +34,7 @@ onMounted(() => {
       <Caption/>
 
 
-      <el-tabs type="border-card" v-model="activeName" class="demo-tabs" @tab-click="handleClick">
+      <el-tabs v-model="activeName" class="tabs" @tab-click="handleClick">
         <el-tab-pane label="Инфо" name="info">
           <InfoTab/>
         </el-tab-pane>
@@ -49,7 +49,6 @@ onMounted(() => {
         <el-tab-pane label="Талон" name="ticket">Талон</el-tab-pane>
         <el-tab-pane label="Файлы" name="files">Файлы</el-tab-pane>
         <el-tab-pane label="Стандарт" name="standart">Стандарт(accord)</el-tab-pane>
-        <el-tab-pane label="Файлы" name="files">Файлы</el-tab-pane>
         <el-tab-pane label="Расчет" name="payment">Расчет</el-tab-pane>
       </el-tabs>
     </section>

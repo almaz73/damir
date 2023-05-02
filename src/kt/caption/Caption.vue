@@ -22,7 +22,7 @@ import StatusButtons from "./StatusButtons.vue";
 
 <style>
 .caption-kt {
-  padding: 0px 25px;
+  padding: 0 25px;
 }
 
 .caption-kt h1 {
@@ -30,6 +30,7 @@ import StatusButtons from "./StatusButtons.vue";
 
   margin-top: 16px;
   margin-bottom: 13px;
+  font-size: 25px;
 }
 
 
