@@ -22,7 +22,7 @@ function exit() {
 <template>
   <div class="herder-menu">
     <span class="sandwich">
-      <img src="../assets/img/headMenu/sandwich.PNG" @click="triggerMenu()"/>
+      <img src="../assets/img/headMenu/sandwich.png" @click="triggerMenu()"/>
     </span>
 
     [ 12:22 ]
@@ -64,3 +64,39 @@ function exit() {
     </el-button>
   </div>
 </template>
+<style>
+/* Верхнее меню */
+
+.herder-menu {
+  white-space: nowrap;
+  /*display: flex;*/
+  padding: 1px;
+  /*justify-content: space-between;*/
+}
+.herder-menu .el-button{
+  margin-right: 2px;
+  background: #D5E0EB;
+  padding: 11px;
+}
+.herder-menu .el-button img{
+  margin-right: 3px;
+}
+
+.herder-menu .sandwich {
+  display: none;
+  cursor: pointer;
+}
+
+@media (width < 900px) {
+  .herder-menu .sandwich {
+    display: inline-block;
+  }
+}
+
+/* Содержимое КТ */
+.kt .head-add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+</style>

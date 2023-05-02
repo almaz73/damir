@@ -69,38 +69,4 @@ section {
     color: var(--blue-text);
 }
 
-/* Верхнее меню */
 
-.herder-menu {
-    white-space: nowrap;
-    display: flex;
-    padding: 3px;
-    justify-content: space-around;
-}
-
-.herder-menu .sandwich {
-    display: none;
-    cursor: pointer;
-}
-
-@media (width < 900px) {
-    .herder-menu .sandwich {
-        display: inline-block;
-    }
-}
-
-/* Содержимое КТ */
-.caption-kt {
-    padding: 0px 25px;
-    margin-top: -3px;
-}
-
-.caption-kt h1 {
-    display: inline-block;
-}
-
-.head-add {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}

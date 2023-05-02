@@ -1,9 +1,3 @@
-<template>
-  <div class="buttons">
-    <el-button v-for="button in buttons" :class="[button.color]">{{ button.text }}</el-button>
-  </div>
-
-</template>
 <script setup>
 
 import {ref} from "vue";
@@ -18,22 +12,14 @@ let buttons = ref([{text: 'КВ заполнена', color: 'grey',},
   {text: 'Передан в Полиция (02)', color: 'red',}, {text: 'Связан с №424 (ЗАДВ)', color: 'yellow',},
   {text: 'ЕДДС (Новокузнецкий ГО ЕДДС)', color: 'green-light',}])
 </script>
+
+<template>
+  <div class="buttons">
+    <el-button v-for="button in buttons" :class="[button.color]" class="round">{{ button.text }}</el-button>
+  </div>
+</template>
+
 <style scoped>
-.buttons {
-  display: flex;
-  padding: 0px 100px 17px 7px;
-  flex-wrap: wrap;
-}
-
-.buttons button {
-  box-shadow: none;
-  --el-font-size-base: 14px;
-  --el-border-radius-base: 6px;
-  margin: 0px 0px 8px 8px;
-  padding: 0px 15px;
-  height: 30px;
-
-}
 
 .grey {
   background: var(--dark-gray);
@@ -55,11 +41,5 @@ let buttons = ref([{text: 'КВ заполнена', color: 'grey',},
 
 .green-light {
   background: #B3D7AF;
-}
-
-@media screen and (max-width: 900px) {
-  .buttons {
-    padding: 0px 15px 15px 7px;
-  }
 }
 </style>

@@ -1,3 +1,32 @@
 .el-tabs--border-card > .el-tabs__content {
     padding: 0px;
 }
+
+/* кнопки */
+.el-button {
+    box-shadow: none;
+    --el-font-size-base: 14px;
+    --el-border-radius-base: 6px;
+    margin: 4px 0;
+    height: 30px;
+    border: 0;
+}
+
+.el-button.special-little{
+    border: 1px solid var(--blue0line);
+    height: 35px;
+}
+
+.el-button.special-big{
+    border: 1px solid var(--blue0line);
+    height: 40px;
+}
+
+.el-button.round {
+    border-radius: 200px;
+}
+
+.el-button.el-button {
+    margin-right: 6px;
+    margin-left: 0px;
+}

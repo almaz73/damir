@@ -7,6 +7,8 @@
     </div>
 
     <div class="area">
+      <el-button>Чувашская республика - Чувашия</el-button>
+      <el-button>Чебоксары</el-button>
       <br><br><br>
     </div>
 
