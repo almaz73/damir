@@ -69,7 +69,7 @@ function exit() {
 
 .herder-menu {
   white-space: nowrap;
-  /*display: flex;*/
+  display: flex;
   padding: 1px;
   /*justify-content: space-between;*/
 }
