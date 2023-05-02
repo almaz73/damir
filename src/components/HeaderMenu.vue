@@ -3,6 +3,7 @@ import axios from "axios";
 import {useRouter} from "vue-router";
 import {useTriggerMenu} from "@/stores/triggerMenu.js";
 import {ref} from "vue";
+import HeaderWatch from "@/components/HeaderWatch.vue";
 
 const router = useRouter()
 let activeButton = ref(false)
@@ -24,8 +25,7 @@ function exit() {
     <span class="sandwich">
       <img src="../assets/img/headMenu/sandwich.png" @click="triggerMenu()"/>
     </span>
-
-    [ 12:22 ]
+    <header-watch/>
     <el-button>
       версия
     </el-button>
