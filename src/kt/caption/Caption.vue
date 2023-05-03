@@ -1,5 +1,6 @@
 <script setup>
 import StatusButtons from "./StatusButtons.vue";
+import StopWatch from "./StopWatch.vue";
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import StatusButtons from "./StatusButtons.vue";
       <el-select>
         Действия
       </el-select>
+      <stop-watch/>
     </div>
     <StatusButtons/>
   </div>

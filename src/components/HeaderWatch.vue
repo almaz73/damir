@@ -13,7 +13,8 @@ const formatTime = ref('')
 let updateTimeInterval;
 
 function run() {
-  const minutes = new Date().toLocaleString().slice(12, -3)
+  const minutes = new Date().toLocaleString().slice(9, -6)
+
   if (formatTime.value !== minutes) formatTime.value = minutes
 
   clearTimeout(updateTimeInterval)
@@ -39,7 +40,7 @@ onBeforeUnmount(() => {
 .watch-block span {
   padding: 0 9px;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 36px;
   line-height: 30px;
 }
 </style>
