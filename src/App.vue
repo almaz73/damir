@@ -11,7 +11,7 @@
   <!-- <TransparentTemplate src="head.gif" top="0" left="0" use="1"/> -->
 
   <!--  Для стилизации панели авторизации -->
-<!--   <TransparentTemplate src="login.JPG" top="0" left="0" use="1"/>-->
+  <!--   <TransparentTemplate src="login.JPG" top="0" left="0" use="1"/>-->
 
   <!-- Треться версия дизайна -->
   <TransparentTemplate src="variant_3.png" top="0" left="0" use="1" originSize="1200px"/>
@@ -24,7 +24,11 @@
 import TransparentTemplate from "./develop/TransparentTemplate.vue";
 import {onMounted} from "vue";
 import TmpLinks from "./develop/TmpLinks.vue";
-onMounted(()=>{
+import {useRouter} from "vue-router";
+
+const router = useRouter()
+
+onMounted(() => {
   console.log('== === === === 111 cardNumber', window.cardNumber);
   // window.cardNumber - при открытии из основной программы получаем id КТ
   // для работы напрямую, без перехода из основной программы, берем id вызова из адресной строки
@@ -32,7 +36,7 @@ onMounted(()=>{
 
 
   // Если пришли из основной программы:
-  location.href.includes('ambulance') && this.$router.push('/ambulance/2/#/callcard/' + window.cardNumber)
+  location.href.includes('ambulance') && router.push('/#ambulance/2/callcard/' + window.cardNumber)
 })
 
 </script>
