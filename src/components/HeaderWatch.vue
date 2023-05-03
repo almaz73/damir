@@ -6,15 +6,15 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {ref, onBeforeUnmount} from 'vue'
 
-const formatTime = ref('')
-let updateTimeInterval;
+const formatTime = ref<string>('')
+let updateTimeInterval:number;
 
-function run() {
-  const date = new Date()
-  const minutes = ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2)
+function run():void {
+  const date:Date = new Date()
+  const minutes:string = ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2)
 
   if (formatTime.value !== minutes) formatTime.value = minutes
 

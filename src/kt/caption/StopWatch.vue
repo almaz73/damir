@@ -6,15 +6,15 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {ref, onBeforeUnmount} from 'vue'
-const resultStr = ref('')
-let hour = 0
-let min = 0
-let sec = 0
-let timeout
+const resultStr = ref<string>('')
+let hour:number = 0
+let min:number = 0
+let sec:number = 0
+let timeout:number
 
-function updateTimer(){
+function updateTimer():void{
   sec++
   if(sec >= 60){
     min++
@@ -24,15 +24,15 @@ function updateTimer(){
     hour++
     min = 0
   }
-  resultStr.value = `${hour > 0 ? format(hour, ':') : ''}${format(min, ':')}${format(sec)}`
+  resultStr.value = `${hour > 0 ? format(hour) + ':' : ''}${format(min) + ':'}${format(sec)}`
 
   clearTimeout(timeout)
   timeout = setTimeout(updateTimer, 1000)
 }
 updateTimer()
 
-function format(num, str=''){
-  return num.toString().padStart(2, '0') + str
+function format(num:number):string{
+  return num < 10 ? `0${num}` : `${num}`
 }
 onBeforeUnmount(() => {
   clearTimeout(timeout)
