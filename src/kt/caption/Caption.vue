@@ -14,7 +14,7 @@ import StopWatch from "./StopWatch.vue";
       <el-select>
         Действия
       </el-select>
-      <stop-watch/>
+      <StopWatch/>
     </div>
     <StatusButtons/>
   </div>

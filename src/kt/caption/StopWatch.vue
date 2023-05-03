@@ -41,9 +41,8 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .stop-watch {
-  color:red;
-  font-weight: 700;
-  font-size: 24px;
+  color: #ff4444;
+  font-size: 20px;
   margin-left: 10px;
 }
 </style>
