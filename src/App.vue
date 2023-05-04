@@ -7,13 +7,13 @@
 <!--  <TransparentTemplate src="variant_3.png" top="0" left="0" use="1" originSize="1200px"/>-->
 
   <!-- Треться версия дизайна -->
-  <TransparentTemplate src="variant_3.png" top="0" left="0" use="1" originSize="1200px"/>
+<!--  <TransparentTemplate src="variant_3.png" top="0" left="0" use="1" originSize="1200px"/>-->
 
   <!-- 1920 -->
 <!--  <TransparentTemplate src="1920.png" top="0" left="0" use="1" originSize="1920px"/>-->
 
   <!-- 1920_2-->
-<!--  <TransparentTemplate src="1920_2.png" top="0" left="0" use="1" originSize="1920px"/>-->
+  <TransparentTemplate src="1920_2.png" top="0" left="0" use="1" originSize="1920px"/>
 
   <TmpLinks/>
 

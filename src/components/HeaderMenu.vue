@@ -14,9 +14,8 @@ function triggerMenu() {
 }
 
 function exit() {
-  axios.post('/ambulance/logout').then(resp => {
-    router.push({path: '/login'});
-  })
+  router.push({path: '/login'});
+  axios.post('/ambulance/logout')
 }
 
 </script>
@@ -54,6 +53,8 @@ function exit() {
       Оповещение
     </el-button>
 
+    <span style="flex-grow: 1"/>
+
     <el-button>
       <img src="../assets/img/headMenu/adm.png"/>
       adminSMP
@@ -73,12 +74,14 @@ function exit() {
   padding: 1px;
   /*justify-content: space-between;*/
 }
-.herder-menu .el-button{
+
+.herder-menu .el-button {
   margin-right: 2px;
   background: #D5E0EB;
   padding: 11px;
 }
-.herder-menu .el-button img{
+
+.herder-menu .el-button img {
   margin-right: 3px;
 }
 

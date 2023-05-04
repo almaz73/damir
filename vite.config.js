@@ -3,8 +3,8 @@ import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
 // можно переключаться на разные сайты, сайты должны быть авторизованы, чтобы получить с них данные
-const link = 'http://localhost:58080' // localhost
-// const link = 'http://192.168.83.53:8080' // мариэл
+// const link = 'http://localhost:58080' // localhost
+const link = 'http://192.168.83.53:8080' // мариэл
 // const link = 'http://192.168.83.142:28080' // татарстан
 // const link = 'http://192.168.83.120:28080/' // кемерова
 // const link = 'http://192.168.83.138:28081/' // якутия
