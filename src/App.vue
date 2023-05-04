@@ -1,20 +1,16 @@
 <template>
   <router-view/>
-
-  <!--  Для стилизации меню -->
-  <!-- <TransparentTemplate src="menu.gif" top="0" left="0" use="1" :toolLeft="150"/> -->
-
-  <!--  Для стилизации КТ -->
-  <!-- <TransparentTemplate src="kt.png" top="0" left="0" toolLeft="130" use="1" /> -->
-
-  <!--  Для стилизации КТ -->
-  <!-- <TransparentTemplate src="head.gif" top="0" left="0" use="1"/> -->
-
   <!--  Для стилизации панели авторизации -->
   <!--   <TransparentTemplate src="login.JPG" top="0" left="0" use="1"/>-->
 
   <!-- Треться версия дизайна -->
-  <TransparentTemplate src="variant_3.png" top="0" left="0" use="1" originSize="1200px"/>
+<!--  <TransparentTemplate src="variant_3.png" top="0" left="0" use="1" originSize="1200px"/>-->
+
+  <!-- Треться версия дизайна -->
+<!--  <TransparentTemplate src="variant_3.png" top="0" left="0" use="1" originSize="1200px"/>-->
+
+  <!-- Треться версия дизайна -->
+  <TransparentTemplate src="1920.png" top="0" left="0" use="1" originSize="1920px"/>
 
   <TmpLinks/>
 
