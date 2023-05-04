@@ -45,7 +45,7 @@ section {
 
 /* Левое меню*/
 .nav-menu {
-    margin: -1px;
+    margin: -2px;
 }
 
 .nav-menu > span {
@@ -54,7 +54,7 @@ section {
     align-items: center;
     background: var(--gray-back);
     padding: 8px 0;
-    height: 65px;
+    height: 62px;
     border-bottom: 1px solid #DDDEDE;
     font-size: 15px;
     cursor: pointer;

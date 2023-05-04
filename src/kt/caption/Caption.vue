@@ -30,8 +30,8 @@ import StopWatch from "./StopWatch.vue";
 .caption-kt h1 {
   display: inline-block;
 
-  margin-top: 16px;
-  margin-bottom: 13px;
+  margin-top: 18px;
+  margin-bottom: 9px;
   font-size: 25px;
 }
 

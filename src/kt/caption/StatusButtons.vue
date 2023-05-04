@@ -9,8 +9,10 @@ let buttons = ref([{text: 'КВ заполнена', color: 'grey',},
   {text: 'Передан в Полиция (02)', color: 'red',},
   {text: 'Связан с №424 (ЗАДВ)', color: 'yellow',},
   {text: 'ЕДДС (Новокузнецкий ГО ЕДДС)', color: 'green-light',},
-  {text: 'Передан в Полиция (02)', color: 'red',}, {text: 'Связан с №424 (ЗАДВ)', color: 'yellow',},
-  {text: 'ЕДДС (Новокузнецкий ГО ЕДДС)', color: 'green-light',}])
+  {text: 'Передан в Полиция (02)', color: 'red',},
+  // {text: 'Связан с №424 (ЗАДВ)', color: 'yellow',},
+  // {text: 'ЕДДС (Новокузнецкий ГО ЕДДС)', color: 'green-light',}
+])
 </script>
 
 <template>
