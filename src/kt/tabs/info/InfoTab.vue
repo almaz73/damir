@@ -20,8 +20,7 @@ import ServiceInfo from "./ServiceInfo.vue";
 <style scoped>
 .info {
   display: grid;
-  grid-auto-columns: 70% 30%;
-  grid-auto-rows: auto auto auto;
+  grid-template-columns: 1fr 35%;
   grid-template-areas: 'info__common info__service' 'info__address info__service' 'info__sickinfo info__service';
 }
 
