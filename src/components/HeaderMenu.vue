@@ -25,8 +25,9 @@ function exit() {
       <img src="../assets/img/headMenu/sandwich.png" @click="triggerMenu()"/>
     </span>
     <header-watch/>
-    <el-button>
+    <el-button class="version">
       версия
+      <div class="text-version">Версия 1.42.0 от 24 января 2023 17:33</div>
     </el-button>
     <el-button>
       <img src="../assets/img/headMenu/testLink.png"/>
@@ -73,6 +74,24 @@ function exit() {
   display: flex;
   padding: 1px;
   /*justify-content: space-between;*/
+}
+
+.herder-menu .version:hover .text-version {
+  display: block;
+}
+
+.herder-menu .text-version {
+  position: absolute;
+  background: white;
+  color: black;
+  top: 40px;
+  left: 120px;
+  border: 1px solid #D8D9D9;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #bbb;
+  display: none;
 }
 
 .herder-menu .el-button {
