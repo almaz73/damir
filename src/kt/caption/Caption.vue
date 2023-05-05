@@ -6,7 +6,7 @@ import StopWatch from "./StopWatch.vue";
 <template>
   <div class="caption-kt">
     <div class="row">
-      <h1>Редактирование для НП (№14905 от 31.03.2021)</h1>
+      <h1>Редактирование для НП (№14905)</h1>
       &nbsp;&nbsp;
       <el-button class="special-little">
         Изменить признак вызова

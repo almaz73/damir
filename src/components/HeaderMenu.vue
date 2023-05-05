@@ -26,7 +26,7 @@ function exit() {
     </span>
     <header-watch/>
     <el-button class="version">
-      версия
+      v.1.42.0
       <div class="text-version">Версия 1.42.0 от 24 января 2023 17:33</div>
     </el-button>
     <el-button>
